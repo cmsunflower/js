@@ -124,7 +124,7 @@ function doPromiseAll(promises){
     }
     let result=[];
     let count=0;
-   new Promise((resolve,reject)=>{
+  return new Promise((resolve,reject)=>{
         promises.forEach((promise,idx)=>{
             promise.then(res=>{
                 result[idx]=res;
