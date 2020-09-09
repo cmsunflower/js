@@ -1,12 +1,12 @@
 
-Promise出现的目的是什么？
+### Promise出现的目的是什么？
 - 用来解决回调地狱的问题
-Promise是什么？
+### Promise是什么？
 - Promise是一个对象，表示异步操作结果最终是成功还是失败。
-特点：
+### 特点：
 1. Promise有三种状态，Pending、Fullfilled、Rejected；其中pending表示初始状态，既不成功也不失败，fullfilled表示成功，rejected表示失败
 2. 状态一旦改变不可逆-
-写法：
+### 写法：
 
 ```js
 new Promise(function(resolve,reject){
@@ -20,13 +20,13 @@ new Promise(function(resolve,reject){
  - 执行器有两个参数，resovle,reject两个函数再状态发生改变的时候执行
  - 当状态由Pending变为成功（Fullfilled）,执行resolve函数，可以传递参数；当状态是Rejected的时候，执行reject函数；如果状态时rejected的时候，抛出一个错误，自执行函数的返回值会被忽略
 
-3.Promise可以链式调用,返回一个Promise
+3. Promise可以链式调用,返回一个Promise
 
-Promise相关的方法，也就是API？
+### Promise相关的方法，也就是API？
 **Promise.prototype.then()：**
-是什么？
+### 是什么？
 - 返回一个新的Promise,用于链式调用；
-怎么用？
+### 怎么用？
 1. 最多有两个参数
 Promise.prototype.then(successCallback[,failCallback])
 其中failCallback是可选的
@@ -34,9 +34,9 @@ Promise.prototype.then(null,failCallback)与Promise.catch()一样，都是捕获
 2. 返回值，返回值（成功）、无返回值（成功，undefined作为参数）、成功、失败、错误（失败）、pending状态
 
 **Promise.prototype.catch()**
-是什么？
+### 是什么？
 - 返回新的Promise,用来处理Promise状态是Rejected（处理拒绝的状态）；
-特点：
+### 特点：
 1. 异步中的抛出的错误不会被catch捕获
 2. resolve()后抛出的错误会被忽略（resolve之后，就说明Promise状态变为成功，状态不可逆，那么后面再抛出错误就会报错）
 3. 抛出一个错误，返回一个Promise,后续再有新的操作，也是会执行的(捕获错误之后，Promise的状态是Fulfilled的)
@@ -67,12 +67,12 @@ p2.then(() => {
  - 无论前面发生了什么
 
 **Promise.all()**
-是什么？
+### 是什么？
 
 - 返回一个Promise实例，如果有一个失败，返回一个rejected状态的Promise;
 - 如果全部成功(包含Promise的状态都为成功、不是Promise的状态)，才返回一个Fulfilled状态的Promise
 
-用途：
+### 用途：
 *并行执行多个异步任务*
 Promise.all([func1,func2,func3]).then([res1,res2,res3]=>{执行函数})
 
@@ -93,23 +93,23 @@ function composeAsync(funcs){
 composeAsync(funcs)();
 ```
 
-特点：
+### 特点：
 1. 如果有失败的，返回第一个Promise失败reject的结果
 2. 如果成功，返回的参数是按照放进来的顺序，返回；与执行完的顺序无关
 3. Promise.all()参数是一个空对象的时候，Promise.all是同步的
 
 **Promise.allSettled()**
-是什么？
+### 是什么？
 - 所有给定的Promise都已经是fulfilled或者rejected后的promise，并带有一个对象数组，每个对像表示对应的promise结果。
-特点:
+### 特点:
 1. 彼此之间不依赖
 2. 参数是可迭代的对象，数组
 
 **Promise.race()：**
-是什么？
+### 是什么？
 - 返回一个Promise对象，一旦第一个Promise是成功或失败，返回的Promise就是成功或失败的
 
-特点：
+### 特点：
 1. 状态和第一个Promise的状态有关，
 
 *Promise.resolve()*
