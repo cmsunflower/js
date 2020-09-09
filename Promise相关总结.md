@@ -1,7 +1,7 @@
 Promise出现的目的是什么？
-Promise是一个对象，用来解决回调地狱的问题
+用来解决回调地狱的问题
 Promise是什么？
-Promise时一个对象，表示异步操作结果最终时成功还是失败。
+Promise是一个对象，表示异步操作结果最终是成功还是失败。
 特点：
 1. Promise有三种状态，Pending、Fullfilled、Rejected；其中pending表示初始状态，既不成功也不失败，fullfilled表示成功，rejected表示失败
 2. 状态一旦改变不可逆
@@ -34,11 +34,11 @@ Promise.prototype.then(null,failCallback)与Promise.catch()一样，都是捕获
 
 **Promise.prototype.catch()**
 是什么？
-返回新的Promise,用来处理Promise状态时Rejected（处理拒绝的状态）；
+返回新的Promise,用来处理Promise状态是Rejected（处理拒绝的状态）；
 特点：
 1. 异步中的抛出的错误不会被catch捕获
 2. resolve()后抛出的错误会被忽略（resolve之后，就说明Promise状态变为成功，状态不可逆，那么后面再抛出错误就会报错）
-3. 抛出一个错误，返回一个Promise,后续再有新的操作，也是会执行的(捕获错误之后，Promise的状态时Fulfilled的)
+3. 抛出一个错误，返回一个Promise,后续再有新的操作，也是会执行的(捕获错误之后，Promise的状态是Fulfilled的)
 4. 遇到异常Promise，就找reject回调函数或者Catch进行错误捕获
 
 ```js
@@ -59,6 +59,10 @@ p2.then(() => {
     console.log('执行「这个」，无论前面发生了什么');
 });
 ```
+执行结果：
+初始化
+执行「那个」
+执行「这个」，无论前面发生了什么
 **Promise.all()**
 是什么？
 
