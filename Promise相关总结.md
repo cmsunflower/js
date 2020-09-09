@@ -23,7 +23,7 @@ new Promise(function(resolve,reject){
 3. Promise可以链式调用,返回一个Promise
 
 ### Promise相关的方法，也就是API？
-**Promise.prototype.then()：**
+## Promise.prototype.then()：
 ### 是什么？
 - 返回一个新的Promise,用于链式调用；
 ### 怎么用？
@@ -33,7 +33,7 @@ Promise.prototype.then(successCallback[,failCallback])
 Promise.prototype.then(null,failCallback)与Promise.catch()一样，都是捕获失败的Promise
 2. 返回值，返回值（成功）、无返回值（成功，undefined作为参数）、成功、失败、错误（失败）、pending状态
 
-**Promise.prototype.catch()**
+## Promise.prototype.catch()
 ### 是什么？
 - 返回新的Promise,用来处理Promise状态是Rejected（处理拒绝的状态）；
 ### 特点：
@@ -66,7 +66,7 @@ p2.then(() => {
  - 执行「这个」
  - 无论前面发生了什么
 
-**Promise.all()**
+## Promise.all()
 ### 是什么？
 
 - 返回一个Promise实例，如果有一个失败，返回一个rejected状态的Promise;
@@ -98,24 +98,24 @@ composeAsync(funcs)();
 2. 如果成功，返回的参数是按照放进来的顺序，返回；与执行完的顺序无关
 3. Promise.all()参数是一个空对象的时候，Promise.all是同步的
 
-**Promise.allSettled()**
+## Promise.allSettled()
 ### 是什么？
 - 所有给定的Promise都已经是fulfilled或者rejected后的promise，并带有一个对象数组，每个对像表示对应的promise结果。
 ### 特点:
 1. 彼此之间不依赖
 2. 参数是可迭代的对象，数组
 
-**Promise.race()：**
+## Promise.race()：
 ### 是什么？
 - 返回一个Promise对象，一旦第一个Promise是成功或失败，返回的Promise就是成功或失败的
 
 ### 特点：
 1. 状态和第一个Promise的状态有关，
 
-*Promise.resolve()*
-*Promise.reject()*
+## Promise.resolve()
+## Promise.reject()
 
-**Promise.all怎么实现**
+## Promise.all怎么实现
 
 ```js
 function doPromiseAll(promises){
