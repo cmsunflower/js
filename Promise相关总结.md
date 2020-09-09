@@ -1,11 +1,11 @@
 
 Promise出现的目的是什么？
-用来解决回调地狱的问题
+- 用来解决回调地狱的问题
 Promise是什么？
-Promise是一个对象，表示异步操作结果最终是成功还是失败。
+- Promise是一个对象，表示异步操作结果最终是成功还是失败。
 特点：
 1. Promise有三种状态，Pending、Fullfilled、Rejected；其中pending表示初始状态，既不成功也不失败，fullfilled表示成功，rejected表示失败
-2. 状态一旦改变不可逆
+2. 状态一旦改变不可逆-
 写法：
 
 ```js
@@ -25,7 +25,7 @@ new Promise(function(resolve,reject){
 Promise相关的方法，也就是API？
 **Promise.prototype.then()：**
 是什么？
-返回一个新的Promise,用于链式调用；
+- 返回一个新的Promise,用于链式调用；
 怎么用？
 1. 最多有两个参数
 Promise.prototype.then(successCallback[,failCallback])
@@ -35,7 +35,7 @@ Promise.prototype.then(null,failCallback)与Promise.catch()一样，都是捕获
 
 **Promise.prototype.catch()**
 是什么？
-返回新的Promise,用来处理Promise状态是Rejected（处理拒绝的状态）；
+- 返回新的Promise,用来处理Promise状态是Rejected（处理拒绝的状态）；
 特点：
 1. 异步中的抛出的错误不会被catch捕获
 2. resolve()后抛出的错误会被忽略（resolve之后，就说明Promise状态变为成功，状态不可逆，那么后面再抛出错误就会报错）
@@ -73,10 +73,10 @@ p2.then(() => {
 - 如果全部成功(包含Promise的状态都为成功、不是Promise的状态)，才返回一个Fulfilled状态的Promise
 
 用途：
-并行执行多个异步任务
+*并行执行多个异步任务*
 Promise.all([func1,func2,func3]).then([res1,res2,res3]=>{执行函数})
 
-串行调用，也就是链式调用
+*串行调用，也就是链式调用*
 
 ```js
 var func1 = new Promise(() => setTimeout(() => console.log(1), 400));
@@ -100,20 +100,20 @@ composeAsync(funcs)();
 
 **Promise.allSettled()**
 是什么？
-所有给定的Promise都已经是fulfilled或者rejected后的promise，并带有一个对象数组，每个对像表示对应的promise结果。
+- 所有给定的Promise都已经是fulfilled或者rejected后的promise，并带有一个对象数组，每个对像表示对应的promise结果。
 特点:
 1. 彼此之间不依赖
 2. 参数是可迭代的对象，数组
 
 **Promise.race()：**
 是什么？
-返回一个Promise对象，一旦第一个Promise是成功或失败，返回的Promise就是成功或失败的
+- 返回一个Promise对象，一旦第一个Promise是成功或失败，返回的Promise就是成功或失败的
 
 特点：
 1. 状态和第一个Promise的状态有关，
 
-Promise.prototype.resolve()
-Promise.prototype.reject()
+*Promise.resolve()*
+*Promise.reject()*
 
 **Promise.all怎么实现**
 
