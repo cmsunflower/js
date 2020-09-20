@@ -12,9 +12,10 @@ function add(){
     }
     return sum;
 }
+// 测试
 add(1)(2)(3)(4);
 function add2(){
-// 最后没有参数传入的时候 打印结果function add(){
+// 最后没有参数传入的时候 打印结果
     let args=[].slice.call(arguments);
     let ans=0;
     let sum=function(){
@@ -30,4 +31,5 @@ function add2(){
     }
     return sum;
 }
+// 测试
 add2(2)(1)(3)();
